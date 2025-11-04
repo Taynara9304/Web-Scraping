@@ -12,6 +12,8 @@ soup = BeautifulSoup(response.text, "html.parser")
 
 hoteis = soup.find_all("div", {"data-testid": "property-card"})
 
+dados = []
+
 for hotel in hoteis:
     nome = hotel.find("div", {"data-testid": "title"})
     preco = hotel.find("span", {"data-testid": "price-and-discounted-price"})
